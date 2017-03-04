@@ -6,6 +6,7 @@ import QuestionScreen from './QuestionScreen';
 import SelectionScreen from './SelectionScreen';
 import TimerScreen from './TimerScreen';
 import EvaluationScreen from './EvaluationScreen';
+import ResultScreen from './ResultScreen';
 
 class App extends Component {
   render() {
@@ -32,6 +33,8 @@ class App extends Component {
         return <TimerScreen navigator={navigator} {...route.passProps} />;
       case 'Eval':
         return <EvaluationScreen navigator={navigator} {...route.passProps} />;
+      case 'Result':
+        return <ResultScreen navigator={navigator} {...route.passProps} />;
       default:
         throw new Error('Unknown route: ' + route.name);
     }
