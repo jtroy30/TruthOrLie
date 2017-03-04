@@ -1,5 +1,8 @@
 # Truth or Lie
 
+## Demo
+<img src="media/demo.gif" width="480">
+
 ## Setup
 
 The application is built with React Native targeting iOS and Android.
@@ -8,19 +11,19 @@ to install the required applications for your platform.
 
 ## Running
 
-1. Install Dependencies
+### Install Dependencies
 
 ```sh
 $ npm install
 ```
 
-2. Link Dependencies
+### Link Dependencies
 
 ```sh
 $ react-native link
 ```
 
-3. Run JS server
+### Run JS server
 
 Open up a new terminal window and run the following command in the project directory:
 
@@ -28,7 +31,7 @@ Open up a new terminal window and run the following command in the project direc
 $ react-native start
 ```
 
-4. Build application
+### Build application
 
 Make sure that the Android emulator is running.
 Then, open up a new terminal window and run the following command in the project directory:
