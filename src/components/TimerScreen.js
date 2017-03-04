@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text } from 'native-base';
+import { View, Text as RNText } from 'react-native';
+import { Container, Content, Button, Text, Grid, Row, Col } from 'native-base';
 
 class TimerScreen extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class TimerScreen extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.timeLeft === 0) {
+    if (prevState.timeLeft === 1) {
       this.evaluate();
     }
   }
@@ -32,19 +33,35 @@ class TimerScreen extends Component {
   render() {
     return (
       <Container>
-        <Content>
-          <Text>
-            {this.state.timeLeft}
-          </Text>
-          <Button
-            full
-            onPress={() => this.evaluate()}
-          >
-            <Text>
-              Done
-            </Text>
-          </Button>
-        </Content>
+        <View style={{ flex: 1 }} >
+          <Grid>
+            <Row size={2}></Row>
+            <Row size={1}>
+              <Col>
+                <RNText style={{
+                    fontSize: 48,
+                    textAlign: 'center',
+                  }}
+                >
+                  {this.state.timeLeft}
+                </RNText>
+              </Col>
+            </Row>
+            <Row size={1}>
+              <Col>
+              <Button
+                full
+                onPress={() => this.evaluate()}
+              >
+                <Text>
+                  Done
+                </Text>
+              </Button>
+              </Col>
+            </Row>
+            <Row></Row>
+          </Grid>
+        </View>
       </Container>
     );
   }
