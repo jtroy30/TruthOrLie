@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import StartScreen from './src/components/StartScreen';
-import TopicScreen from './src/components/TopicScreen';
+import App from './src/components/App';
 
-AppRegistry.registerComponent('TruthOrLie', () => StartScreen);
+AppRegistry.registerComponent('TruthOrLie', () => App);

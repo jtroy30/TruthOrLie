@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Navigator
         style={{ flex: 1 }}
-        initialRoute={{ name: 'StartScreen '}}
+        initialRoute={{ name: 'Start'}}
         renderScene={this.renderScene}
       />
     );
