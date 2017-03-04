@@ -4,6 +4,7 @@ import StartScreen from './StartScreen';
 import TopicScreen from './TopicScreen';
 import QuestionScreen from './QuestionScreen';
 import SelectionScreen from './SelectionScreen';
+import TimerScreen from './TimerScreen';
 
 class App extends Component {
   render() {
@@ -25,6 +26,8 @@ class App extends Component {
       return <QuestionScreen navigator={navigator} {...route.passProps} />;
     } else if (route.name === 'Selection') {
       return <SelectionScreen navigator={navigator} {...route.passProps} />
+    } else if (route.name === 'Timer') {
+      return <TimerScreen navigator={navigator} {...route.passProps} />;
     }
   }
 }
