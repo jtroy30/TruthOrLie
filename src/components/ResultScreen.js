@@ -25,6 +25,7 @@ class ResultScreen extends Component {
             <FooterTab>
               <Button
                 full
+                onPress={() => this.returnToMain()}
               >
                 <Text>
                   Return to Main
@@ -35,6 +36,12 @@ class ResultScreen extends Component {
         </View>
       </Container>
     )    
+  }
+
+  returnToMain() {
+    this.props.navigator.push({
+      name: 'Start',
+    });
   }
 }
 
