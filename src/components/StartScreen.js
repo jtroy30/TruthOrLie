@@ -14,12 +14,21 @@ class StartScreen extends Component {
         </Header>
 
         <Content>
-          <Button full>
+          <Button
+            full
+            onPress={() => this.startGame()}
+          >
             <Text>New Game</Text>
           </Button>
         </Content>
       </Container>
     );
+  }
+
+  startGame() {
+    this.props.navigator.push({
+      name: 'Topic',
+    });
   }
 }
 
