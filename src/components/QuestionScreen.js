@@ -27,7 +27,9 @@ class QuestionScreen extends Component {
   showSelection(question) {
     this.props.navigator.push({
       name: 'Selection',
-      question,
+      passProps: {
+        question,
+      }
     });
   }
 }

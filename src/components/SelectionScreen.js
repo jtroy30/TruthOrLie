@@ -42,7 +42,9 @@ class SelectionScreen extends Component {
   startTimer(answer) {
     this.props.navigator.push({
       name: 'Timer',
-      answer,
+      passProps: {
+        answer,
+      },
     });
   }
 }

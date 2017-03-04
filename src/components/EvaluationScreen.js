@@ -42,7 +42,9 @@ class EvaluationScreen extends Component {
   showResult(choice) {
     this.props.navigator.push({
       name: 'Result',
-      won: (this.props.answer === choice),
+      passProps: {
+        won: (this.props.answer === choice),
+      }
     });
   }
 }
