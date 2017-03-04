@@ -11,6 +11,7 @@ class QuestionScreen extends Component {
               <Button
                 full
                 key={index}
+                onPress={() => this.showSelection(question)}
               >
                 <Text>
                   {question}
@@ -21,6 +22,13 @@ class QuestionScreen extends Component {
         </Content>
       </Container>
     );
+  }
+
+  showSelection(question) {
+    this.props.navigator.push({
+      name: 'Selection',
+      question,
+    });
   }
 }
 

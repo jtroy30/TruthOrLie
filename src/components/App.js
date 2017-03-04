@@ -3,6 +3,7 @@ import { Navigator } from 'react-native';
 import StartScreen from './StartScreen';
 import TopicScreen from './TopicScreen';
 import QuestionScreen from './QuestionScreen';
+import SelectionScreen from './SelectionScreen';
 
 class App extends Component {
   render() {
@@ -22,6 +23,8 @@ class App extends Component {
       return <TopicScreen navigator={navigator} />;
     } else if (route.name === 'Question') {
       return <QuestionScreen navigator={navigator} {...route.passProps} />;
+    } else if (route.name === 'Selection') {
+      return <SelectionScreen navigator={navigator} {...route.passProps} />
     }
   }
 }
