@@ -23,6 +23,12 @@ class TimerScreen extends Component {
     clearInterval(this.interval);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.timeLeft === 0) {
+      this.evaluate();
+    }
+  }
+
   render() {
     return (
       <Container>
