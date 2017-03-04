@@ -30,7 +30,10 @@ class TimerScreen extends Component {
           <Text>
             {this.state.timeLeft}
           </Text>
-          <Button full>
+          <Button
+            full
+            onPress={() => this.evaluate()}
+          >
             <Text>
               Done
             </Text>
@@ -38,6 +41,13 @@ class TimerScreen extends Component {
         </Content>
       </Container>
     );
+  }
+
+  evaluate() {
+    this.props.navigator.push({
+      name: 'Eval',
+      answer: this.props.answer,
+    });
   }
 }
 
