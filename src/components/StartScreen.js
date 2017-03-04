@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Body, Button, Text } from 'native-base';
 
-
-class Start extends Component {
+class StartScreen extends Component {
   render() {
     return (
       <Container>
@@ -24,4 +23,4 @@ class Start extends Component {
   }
 }
 
-export default Start;
+export default StartScreen;
