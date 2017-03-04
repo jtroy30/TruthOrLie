@@ -38,6 +38,7 @@ class TopicScreen extends Component {
               <Button
                 full
                 key={index}
+                onPress={() => this.showQuestions(topics[index]['questions'])}
               >
                 <Text>
                   {topic.category}
@@ -48,6 +49,15 @@ class TopicScreen extends Component {
         </Content>
       </Container>
     );
+  }
+
+  showQuestions(questions) {
+    this.props.navigator.push({
+      name: 'Question',
+      passProps: {
+        questions,
+      }
+    });
   }
 }
 

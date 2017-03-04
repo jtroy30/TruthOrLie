@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navigator } from 'react-native';
 import StartScreen from './StartScreen';
 import TopicScreen from './TopicScreen';
+import QuestionScreen from './QuestionScreen';
 
 class App extends Component {
   render() {
@@ -16,9 +17,11 @@ class App extends Component {
 
   renderScene(route, navigator) {
     if (route.name === 'Start') {
-      return <StartScreen navigator={navigator} />
+      return <StartScreen navigator={navigator} />;
     } else if (route.name === 'Topic') {
-      return <TopicScreen navigator={navigator} />
+      return <TopicScreen navigator={navigator} />;
+    } else if (route.name === 'Question') {
+      return <QuestionScreen navigator={navigator} {...route.passProps} />;
     }
   }
 }
