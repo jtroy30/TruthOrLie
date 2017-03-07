@@ -15,6 +15,15 @@ const selections = [
 ];
 
 class SelectionScreen extends Component {
+  startTimer(answer) {
+    this.props.navigator.push({
+      name: 'Timer',
+      passProps: {
+        answer,
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -37,15 +46,6 @@ class SelectionScreen extends Component {
         </Content>
       </Container>
     );
-  }
-
-  startTimer(answer) {
-    this.props.navigator.push({
-      name: 'Timer',
-      passProps: {
-        answer,
-      },
-    });
   }
 }
 

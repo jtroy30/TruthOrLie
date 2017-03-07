@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text, Grid, Row, Col, Footer, FooterTab } from 'native-base';
+import { Container, Button, Text, Grid, Row, Col, Footer, FooterTab } from 'native-base';
 import { View, Text as RNText } from 'react-native';
 
 class ResultScreen extends Component {
+  returnToMain() {
+    this.props.navigator.push({
+      name: 'Start',
+    });
+  }
+
   render() {
     return (
       <Container>
         <View style={{ flex: 1 }} >
           <Grid>
-            <Row size={1}></Row>
+            <Row size={1} />
             <Row size={1}>
               <Col>
-                <RNText style={{
+                <RNText
+                  style={{
                     fontSize: 48,
                     textAlign: 'center',
                   }}
@@ -35,13 +42,7 @@ class ResultScreen extends Component {
           </Footer>
         </View>
       </Container>
-    )    
-  }
-
-  returnToMain() {
-    this.props.navigator.push({
-      name: 'Start',
-    });
+    );
   }
 }
 

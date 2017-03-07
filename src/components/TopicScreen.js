@@ -8,7 +8,7 @@ const topics = [
       'Travel Question 1',
       'Travel Question 2',
       'Travel Question 3',
-    ]
+    ],
   },
   {
     category: 'Food',
@@ -16,7 +16,7 @@ const topics = [
       'Food Question 1',
       'Food Question 2',
       'Food Question 3',
-    ]
+    ],
   },
   {
     category: 'Hobby',
@@ -24,11 +24,20 @@ const topics = [
       'Hobby Question 1',
       'Hobby Question 2',
       'Hobby Question 3',
-    ]
-  }
+    ],
+  },
 ];
 
 class TopicScreen extends Component {
+  showQuestions(questions) {
+    this.props.navigator.push({
+      name: 'Question',
+      passProps: {
+        questions,
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -38,7 +47,7 @@ class TopicScreen extends Component {
               <Button
                 full
                 key={index}
-                onPress={() => this.showQuestions(topics[index]['questions'])}
+                onPress={() => this.showQuestions(topics[index].questions)}
               >
                 <Text>
                   {topic.category}
@@ -49,15 +58,6 @@ class TopicScreen extends Component {
         </Content>
       </Container>
     );
-  }
-
-  showQuestions(questions) {
-    this.props.navigator.push({
-      name: 'Question',
-      passProps: {
-        questions,
-      }
-    });
   }
 }
 

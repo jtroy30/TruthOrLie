@@ -9,16 +9,6 @@ import EvaluationScreen from './EvaluationScreen';
 import ResultScreen from './ResultScreen';
 
 class App extends Component {
-  render() {
-    return (
-      <Navigator
-        style={{ flex: 1 }}
-        initialRoute={{ name: 'Start'}}
-        renderScene={this.renderScene}
-      />
-    );
-  }
-
   renderScene(route, navigator) {
     switch (route.name) {
       case 'Start':
@@ -28,7 +18,7 @@ class App extends Component {
       case 'Question':
         return <QuestionScreen navigator={navigator} {...route.passProps} />;
       case 'Selection':
-        return <SelectionScreen navigator={navigator} {...route.passProps} />
+        return <SelectionScreen navigator={navigator} {...route.passProps} />;
       case 'Timer':
         return <TimerScreen navigator={navigator} {...route.passProps} />;
       case 'Eval':
@@ -36,9 +26,20 @@ class App extends Component {
       case 'Result':
         return <ResultScreen navigator={navigator} {...route.passProps} />;
       default:
-        throw new Error('Unknown route: ' + route.name);
+        throw new Error(`Unknown route: ${route.name}`);
     }
   }
+
+  render() {
+    return (
+      <Navigator
+        style={{ flex: 1 }}
+        initialRoute={{ name: 'Start' }}
+        renderScene={this.renderScene}
+      />
+    );
+  }
+
 }
 
 export default App;

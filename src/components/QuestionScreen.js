@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { Container, Content, Button, Text } from 'native-base';
 
 class QuestionScreen extends Component {
+  showSelection(question) {
+    this.props.navigator.push({
+      name: 'Selection',
+      passProps: {
+        question,
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -24,14 +33,6 @@ class QuestionScreen extends Component {
     );
   }
 
-  showSelection(question) {
-    this.props.navigator.push({
-      name: 'Selection',
-      passProps: {
-        question,
-      }
-    });
-  }
 }
 
 export default QuestionScreen;

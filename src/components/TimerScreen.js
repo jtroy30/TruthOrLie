@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text as RNText } from 'react-native';
-import { Container, Content, Button, Text, Grid, Row, Col, Footer, FooterTab } from 'native-base';
+import { Container, Button, Text, Grid, Row, Col, Footer, FooterTab } from 'native-base';
 
 class TimerScreen extends Component {
   constructor(props) {
@@ -10,18 +10,8 @@ class TimerScreen extends Component {
     };
   }
 
-  tick() {
-    this.setState((prevState) => ({
-      timeLeft: prevState.timeLeft - 1,
-    }));
-  }
-
   componentDidMount() {
     this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -30,15 +20,36 @@ class TimerScreen extends Component {
     }
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  tick() {
+    this.setState((prevState) => ({
+      timeLeft: prevState.timeLeft - 1,
+    }));
+  }
+
+  evaluate() {
+    clearInterval(this.interval);
+    this.props.navigator.push({
+      name: 'Eval',
+      passProps: {
+        answer: this.props.answer,
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
         <View style={{ flex: 1 }} >
           <Grid>
-            <Row size={2}></Row>
+            <Row size={2} />
             <Row size={1}>
               <Col>
-                <RNText style={{
+                <RNText
+                  style={{
                     fontSize: 48,
                     textAlign: 'center',
                   }}
@@ -63,16 +74,6 @@ class TimerScreen extends Component {
         </View>
       </Container>
     );
-  }
-
-  evaluate() {
-    clearInterval(this.interval);
-    this.props.navigator.push({
-      name: 'Eval',
-      passProps: {
-        answer: this.props.answer,
-      },
-    });
   }
 }
 

@@ -15,6 +15,15 @@ const selections = [
 ];
 
 class EvaluationScreen extends Component {
+  showResult(choice) {
+    this.props.navigator.push({
+      name: 'Result',
+      passProps: {
+        won: (this.props.answer === choice),
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -37,15 +46,6 @@ class EvaluationScreen extends Component {
         </Content>
       </Container>
     );
-  }
-
-  showResult(choice) {
-    this.props.navigator.push({
-      name: 'Result',
-      passProps: {
-        won: (this.props.answer === choice),
-      }
-    });
   }
 }
 
