@@ -6,7 +6,7 @@ class TimerScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeLeft: 5,
+      timeLeft: 60,
     };
   }
 
