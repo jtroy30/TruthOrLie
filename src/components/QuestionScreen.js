@@ -4,10 +4,9 @@ import { Container, Content, Button, Text, Card, CardItem, Body } from 'native-b
 class QuestionScreen extends Component {
   showSelection(question) {
     this.props.navigator.push({
-      name: 'Selection',
+      name: 'Assign',
       passProps: {
         question,
-        eval: false,
       },
     });
   }

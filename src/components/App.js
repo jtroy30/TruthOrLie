@@ -6,6 +6,7 @@ import QuestionScreen from './QuestionScreen';
 import SelectionScreen from './SelectionScreen';
 import TimerScreen from './TimerScreen';
 import ResultScreen from './ResultScreen';
+import AssignmentScreen from './AssignmentScreen';
 
 class App extends Component {
   renderScene(route, navigator) {
@@ -16,6 +17,8 @@ class App extends Component {
         return <TopicScreen navigator={navigator} />;
       case 'Question':
         return <QuestionScreen navigator={navigator} {...route.passProps} />;
+      case 'Assign':
+        return <AssignmentScreen navigator={navigator} {...route.passProps} />;
       case 'Selection':
         return <SelectionScreen navigator={navigator} {...route.passProps} />;
       case 'Timer':
