@@ -5,11 +5,17 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 class SelectionScreen extends Component {
   startTimer(answer) {
+    
+    var player1 = 0;
+    var player2 = 0;
+    
     if (this.props.eval) {
       this.props.navigator.push({
         name: 'Result',
         passProps: {
           won: (this.props.answer === answer),
+          player1: player1 +5;
+          player2: player2 - 5;
         },
       });
     } else {
@@ -17,6 +23,8 @@ class SelectionScreen extends Component {
         name: 'Timer',
         passProps: {
           answer,
+          player1: player1 - 5;
+          player2: player2 + 5;
         },
       });
     }
