@@ -1,0 +1,11 @@
+#Point System for game
+
+Characters: Teller(T), Inquirer(I)
+
+Situation 1: Teller is told to lie. Teller wins / Inquirer loses
+  Teller +5 Inquirer -5
+Situation 2: Teller is told to be truthful. Teller wins / Inquirer loses
+Situation 3: Teller is told to lie. T loses / I wins
+Situation 4: Teller is told to be truthful. T loses / I wins
+Situation 5: Teller is told to lie. Double Down. T wins / I loses
+Situation 6: Teller is told to lie. Double Down. T loses / I loses 
