@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text } from 'native-base';
+import { Container, Content, Button, Text, Card, CardItem, Body } from 'native-base';
 
 class QuestionScreen extends Component {
   showSelection(question) {
@@ -15,19 +15,23 @@ class QuestionScreen extends Component {
     return (
       <Container>
         <Content>
-          {this.props.questions.map((question, index) => {
-            return (
-              <Button
-                full
-                key={index}
-                onPress={() => this.showSelection(question)}
-              >
-                <Text>
-                  {question}
-                </Text>
-              </Button>
-            );
-          })}
+          <Card>
+            {this.props.questions.map((question) => {
+              return (
+                <CardItem
+                  button
+                  onPress={() => this.showSelection(question)}
+                  key={question}
+                >
+                  <Body>
+                    <Text>
+                      {question}
+                    </Text>
+                  </Body>
+                </CardItem>
+              );
+            })}
+          </Card>
         </Content>
       </Container>
     );
