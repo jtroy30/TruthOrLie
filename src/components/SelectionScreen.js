@@ -1,30 +1,25 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import { Container, Content, Button } from 'native-base';
+import { Text, View } from 'react-native';
+import { Container } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import { View } from 'react-native';
-
-const selections = [
-  {
-    label: 'Truth',
-    success: true,
-    warning: false,
-  },
-  {
-    label: 'Lie',
-    success: false,
-    warning: true,
-  },
-];
 
 class SelectionScreen extends Component {
   startTimer(answer) {
-    this.props.navigator.push({
-      name: 'Timer',
-      passProps: {
-        answer,
-      },
-    });
+    if (this.props.eval) {
+      this.props.navigator.push({
+        name: 'Result',
+        passProps: {
+          won: (this.props.answer === answer),
+        },
+      });
+    } else {
+      this.props.navigator.push({
+        name: 'Timer',
+        passProps: {
+          answer,
+        },
+      });
+    }
   }
 
   render() {

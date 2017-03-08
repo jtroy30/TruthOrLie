@@ -5,7 +5,6 @@ import TopicScreen from './TopicScreen';
 import QuestionScreen from './QuestionScreen';
 import SelectionScreen from './SelectionScreen';
 import TimerScreen from './TimerScreen';
-import EvaluationScreen from './EvaluationScreen';
 import ResultScreen from './ResultScreen';
 
 class App extends Component {
@@ -21,8 +20,6 @@ class App extends Component {
         return <SelectionScreen navigator={navigator} {...route.passProps} />;
       case 'Timer':
         return <TimerScreen navigator={navigator} {...route.passProps} />;
-      case 'Eval':
-        return <EvaluationScreen navigator={navigator} {...route.passProps} />;
       case 'Result':
         return <ResultScreen navigator={navigator} {...route.passProps} />;
       default:

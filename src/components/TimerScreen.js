@@ -33,9 +33,10 @@ class TimerScreen extends Component {
   evaluate() {
     clearInterval(this.interval);
     this.props.navigator.push({
-      name: 'Eval',
+      name: 'Selection',
       passProps: {
         answer: this.props.answer,
+        eval: true,
       },
     });
   }

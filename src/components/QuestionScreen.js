@@ -7,6 +7,7 @@ class QuestionScreen extends Component {
       name: 'Selection',
       passProps: {
         question,
+        eval: false,
       },
     });
   }
