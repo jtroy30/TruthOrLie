@@ -6,7 +6,7 @@ import topics from '../../data/topics';
 class TopicScreen extends Component {
   showQuestions(questions) {
     this.props.navigator.push({
-      name: 'Question',
+      name: 'Assign',
       passProps: {
         questions,
       },

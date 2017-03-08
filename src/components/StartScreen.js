@@ -14,7 +14,7 @@ class StartScreen extends Component {
         <Header>
           <Body>
             <Title>
-              TruthOrLie
+              Hot Seat
             </Title>
           </Body>
         </Header>

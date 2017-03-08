@@ -14,9 +14,10 @@ class AssignmentScreen extends Component {
 
   startTimer(answer) {
     this.props.navigator.push({
-      name: 'Timer',
+      name: 'Question',
       passProps: {
-        answer,
+        answer: this.state.selection,
+        questions: this.props.questions,
       },
     });
   }

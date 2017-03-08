@@ -13,12 +13,12 @@ class App extends Component {
     switch (route.name) {
       case 'Start':
         return <StartScreen navigator={navigator} />;
-      case 'Topic':
-        return <TopicScreen navigator={navigator} />;
-      case 'Question':
-        return <QuestionScreen navigator={navigator} {...route.passProps} />;
       case 'Assign':
         return <AssignmentScreen navigator={navigator} {...route.passProps} />;
+      case 'Topic':
+        return <TopicScreen navigator={navigator} {...route.passProps} />;
+      case 'Question':
+        return <QuestionScreen navigator={navigator} {...route.passProps} />;
       case 'Selection':
         return <SelectionScreen navigator={navigator} {...route.passProps} />;
       case 'Timer':
