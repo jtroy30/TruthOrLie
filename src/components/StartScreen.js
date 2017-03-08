@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Body, Button, Text } from 'native-base';
+import { Container, Header, Title, Content, Body, Button, Text, Footer, FooterTab } from 'native-base';
 
 class StartScreen extends Component {
   startGame() {
@@ -19,18 +19,21 @@ class StartScreen extends Component {
           </Body>
         </Header>
 
-        <Content>
-          <Button
-            full
-            onPress={() => this.startGame()}
-          >
-            <Text>New Game</Text>
-          </Button>
-        </Content>
+        <Content />
+
+        <Footer>
+          <FooterTab>
+            <Button
+              full
+              onPress={() => this.startGame()}
+            >
+              <Text>New Game</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
-
 }
 
 export default StartScreen;
