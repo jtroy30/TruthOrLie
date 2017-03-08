@@ -15,23 +15,24 @@ class QuestionScreen extends Component {
     return (
       <Container>
         <Content>
-          <Card>
             {this.props.questions.map((question) => {
               return (
-                <CardItem
-                  button
-                  onPress={() => this.showSelection(question)}
+                <Card
                   key={question}
                 >
-                  <Body>
-                    <Text>
-                      {question}
-                    </Text>
-                  </Body>
-                </CardItem>
+                  <CardItem
+                    button
+                    onPress={() => this.showSelection(question)}
+                  >
+                    <Body>
+                      <Text>
+                        {question}
+                      </Text>
+                    </Body>
+                  </CardItem>
+                </Card>
               );
             })}
-          </Card>
         </Content>
       </Container>
     );
