@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text } from 'native-base';
+import { Text } from 'react-native';
+import { Container, Content, Button } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
+import { View } from 'react-native';
 
 const selections = [
   {
@@ -27,23 +30,48 @@ class SelectionScreen extends Component {
   render() {
     return (
       <Container>
-        <Content>
-          {selections.map((selection, index) => {
-            return (
-              <Button
-                full
-                key={index}
-                success={selection.success}
-                warning={selection.warning}
-                onPress={() => this.startTimer(selection.success)}
-              >
-                <Text>
-                  {selection.label}
-                </Text>
-              </Button>
-            );
-          })}
-        </Content>
+        <View style={{ flex: 1 }}>
+          <Grid>
+            <Col
+              style={{ backgroundColor: '#635DB7' }}
+            >
+              <Row />
+              <Row>
+                <Col>
+                  <Text
+                    style={{
+                      fontSize: 48,
+                      textAlign: 'center',
+                    }}
+                    onPress={() => this.startTimer(true)}
+                  >
+                    Truth
+                  </Text>
+                </Col>
+              </Row>
+              <Row />
+            </Col>
+            <Col
+              style={{ backgroundColor: '#00CE9F' }}
+            >
+              <Row />
+              <Row>
+                <Col>
+                  <Text
+                    style={{
+                      fontSize: 48,
+                      textAlign: 'center',
+                    }}
+                    onPress={() => this.startTimer(false)}
+                  >
+                    Lie
+                  </Text>
+                </Col>
+              </Row>
+              <Row />
+            </Col>
+          </Grid>
+        </View>
       </Container>
     );
   }
