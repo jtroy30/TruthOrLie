@@ -23,7 +23,7 @@ class ResultScreen extends Component {
                     textAlign: 'center',
                   }}
                 >
-                  {this.props.won ? 'You Win!' : 'You Lose!'}
+                  {this.props.won ? 'You Win!   +5' : 'You Lose!   +5'}
                 </RNText>
               </Col>
             </Row>
